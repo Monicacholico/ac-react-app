@@ -1,3 +1,43 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+section {
+  padding: 64px 32px;
+}
+table {
+  display: table;
+  width: 100%;
+}
+tr {
+  display: table-row;
+}
+.table-column {
+  display: table-column;
+}
+.table-cell {
+  display: table-cell;
+}
+th.table-cell {
+  color: #5F667E;
+  background: #f7f9ff;
+}
+td {
+  padding: 10px 0;
+  border-bottom: #edf0f7 1px solid;
+}
+.text_left {
+  text-align: left;
+}
+.name {
+  color: #356ae6;
+  font-weight: 600;
+}
+
+
+
+
 .App {
   text-align: center;
 }
