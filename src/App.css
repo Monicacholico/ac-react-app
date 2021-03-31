@@ -13,6 +13,12 @@ table {
 tr {
   display: table-row;
 }
+.table-row:nth-of-type(even) {
+  background: #f7f9ff;
+}
+tr.table-row:nth-of-type(even) {
+  background-color: #f7f9ff;
+}
 .table-column {
   display: table-column;
 }
@@ -38,9 +44,6 @@ td {
   color: #356ae6;
   font-weight: 600;
 }
-
-
-
 
 .App {
   text-align: center;
@@ -80,4 +83,6 @@ td {
     transform: rotate(360deg);
   }
 }
+
+
 

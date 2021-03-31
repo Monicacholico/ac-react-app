@@ -1,61 +1,33 @@
 import React, {Component} from 'react';
 import Contact from './Contact';
+import Deal from './Deal';
+import Tag from './Tag';
+import Location from './Location';
+import TotalValue from './TotalValue';
 import './App.css';
 
 
 class Table extends Component {
-    state = {
-        contacts: {},
-        tags: {},
-        deals: {},
-        location: {},
-        totalValue: {}
-    }
     render() {
-        // const listOfContacts = Execute();
-        // console.log(listOfContacts);
         return (
             <section className="section">
-                <h2 className="lavender">Here goes the Table!</h2>
                 <table className="legend">
                     <thead>
                         <tr className="ac_lists-subheaders">
                         <th className="table-cell text_left">Contact</th>
                         <th className="table-cell text_left">Total Value</th>
-                        <th className="table-cell text_left">Location</th>
                         <th className="table-cell text_left">Deals</th>
                         <th className="table-cell text_left">Tags</th>
+                        {/* <th className="table-cell text_left">Location</th> */}
                         </tr>
                     </thead>
                 <tbody>
                     <tr className="table-row">
-                    {/* <td className="name td-underline">{contact}</td> */}
-                    <td className="table-cell"><Contact/></td>
-                    <td className="">$89,324</td>
-                    <td className="">Chicago, Il, USA</td>
-                    <td className="">2</td>
-                    <td className="">customer, new-deals</td>
-                    </tr>
-                    <tr className="table-row">
-                    <td className="name td-underline">John Doe</td>
-                    <td className="">$89,324</td>
-                    <td className="">Chicago, Il, USA</td>
-                    <td className="">2</td>
-                    <td className="">customer, new-deals</td>
-                    </tr>
-                    <tr className="table-row">
-                    <td className="name td-underline">John Doe</td>
-                    <td className="">$89,324</td>
-                    <td className="">Chicago, Il, USA</td>
-                    <td className="">2</td>
-                    <td className="">customer, new-deals</td>
-                    </tr>
-                    <tr className="table-row">
-                    <td className="name td-underline">John Doe</td>
-                    <td className="">$89,324</td>
-                    <td className="">Chicago, Il, USA</td>
-                    <td className="">2</td>
-                    <td className="">customer, new-deals</td>
+                    <td className="table-cell name text_underline"><Contact/></td>
+                    <td className=""><TotalValue/></td>
+                    <td className=""><Deal/></td>
+                    <td className=""><Tag/></td>
+                    {/* <td className=""><Location/></td> */}
                     </tr>
                 </tbody>
                 </table>

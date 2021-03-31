@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import "./App.css"
 import API_KEY from "./credentials";
 
-class Contact extends Component {
+class TotalValue extends Component {
     state = {
       isLoading: true,
-      users: [],
+      deals: [],
       error: null
     };
-    fetchUsers() {
-        const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/contacts';
+    fetchDeals() {
+        const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/deals?orders[title]=ASC&orders[value]=ASC&orders[cdate]=ASC&orders[contact_name]=ASC&orders[contact_orgname]=ASC&orders[next-action]=ASC';
     const options = {
         method: 'GET',
         headers: {
@@ -20,7 +20,7 @@ class Contact extends Component {
       return fetch(url, options)
         .then(response => response.json())
         .then(data => this.setState({
-            users: data.contacts,
+            deals: data.deals,
             isLoading: false,
           })
         )
@@ -28,20 +28,24 @@ class Contact extends Component {
     }
 
     componentDidMount() {
-      this.fetchUsers();
+      this.fetchDeals();
     }
     render() {
-      const { isLoading, users, error } = this.state;
-      console.log(users);
+        let numberWithCommas = function numberWithCommas(x) {
+            var parts = x.toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        };
+      const { isLoading, deals, error } = this.state;
       return (
         <React.Fragment>
           {error ? <p>{error.message}</p> : null}
           {!isLoading ? (
-            users.map(user => {
-              const { firstName, lastName } = user;
+            deals.map(deal => {
+              const { activityCount, value, currency} = deal;
               return (
-                <td className="table-cell name">
-                  <p>{firstName} {lastName}</p>
+                <td className="table-cell">
+                  <p>{activityCount} ${numberWithCommas(value)} {currency}</p>
                 </td>
               );
             })
@@ -55,4 +59,4 @@ class Contact extends Component {
     }
   }
 
-export default Contact;
+export default TotalValue;

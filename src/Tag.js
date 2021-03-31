@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import "./App.css"
 import API_KEY from "./credentials";
 
-class Contact extends Component {
+class Tag extends Component {
     state = {
       isLoading: true,
-      users: [],
+      tags: [],
       error: null
     };
-    fetchUsers() {
-        const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/contacts';
+    fetchDeals() {
+        const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/tags';
     const options = {
         method: 'GET',
         headers: {
@@ -20,7 +20,7 @@ class Contact extends Component {
       return fetch(url, options)
         .then(response => response.json())
         .then(data => this.setState({
-            users: data.contacts,
+            tags: data.tags,
             isLoading: false,
           })
         )
@@ -28,20 +28,19 @@ class Contact extends Component {
     }
 
     componentDidMount() {
-      this.fetchUsers();
+      this.fetchDeals();
     }
     render() {
-      const { isLoading, users, error } = this.state;
-      console.log(users);
+      const { isLoading, tags, error } = this.state;
       return (
         <React.Fragment>
           {error ? <p>{error.message}</p> : null}
           {!isLoading ? (
-            users.map(user => {
-              const { firstName, lastName } = user;
+            tags.map(t => {
+              const { tag } = t;
               return (
-                <td className="table-cell name">
-                  <p>{firstName} {lastName}</p>
+                <td className="table-cell">
+                  <p>{tag}</p>
                 </td>
               );
             })
@@ -55,4 +54,4 @@ class Contact extends Component {
     }
   }
 
-export default Contact;
+export default Tag;
