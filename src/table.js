@@ -30,7 +30,7 @@ class Table extends Component {
                 <tbody>
                     <tr className="table-row">
                     {/* <td className="name td-underline">{contact}</td> */}
-                    <Contact/>
+                    <td className="table-cell"><Contact/></td>
                     <td className="">$89,324</td>
                     <td className="">Chicago, Il, USA</td>
                     <td className="">2</td>

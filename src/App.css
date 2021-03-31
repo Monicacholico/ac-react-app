@@ -19,6 +19,10 @@ tr {
 .table-cell {
   display: table-cell;
 }
+td.table-cell {
+  display: flex;
+  flex-flow: column;
+}
 th.table-cell {
   color: #5F667E;
   background: #f7f9ff;
