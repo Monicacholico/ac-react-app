@@ -2,25 +2,25 @@ import React, {Component} from 'react';
 import "./App.css"
 import API_KEY from "./credentials";
 
-class Contact extends Component {
+class Location extends Component {
     state = {
       isLoading: true,
-      users: [],
+      locations: [],
       error: null
     };
-    fetchUsers() {
-        const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/contacts';
-    const options = {
-        method: 'GET',
-        headers: {
-            "Api-Token": `${API_KEY}`,
-            "Accept": "application/json"
-            }
-        };
+    fetchLocations() {
+        const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/addresses/';
+        const options = {
+            method: 'GET',
+            headers: {
+                "Api-Token": `${API_KEY}`,
+                "Accept": "application/json"
+                }
+            };
       return fetch(url, options)
         .then(response => response.json())
         .then(data => this.setState({
-            users: data.contacts,
+            locations: data.addresses,
             isLoading: false,
           })
         )
@@ -28,20 +28,21 @@ class Contact extends Component {
     }
   
     componentDidMount() {
-      this.fetchUsers();
+      this.fetchLocations();
     }
     render() {
-      const { isLoading, users, error } = this.state;
-      console.log(users);
+      const { isLoading, locations, error } = this.state;
+      console.log(locations);
       return (
         <React.Fragment>
+        {/* <h1>Hello Location</h1> */}
           {error ? <p>{error.message}</p> : null}
           {!isLoading ? (
-            users.map(user => {
-              const { firstName, lastName } = user;
+            locations.map(location => {
+              const { city, state } = location;
               return (
                 <td className="table-cell name">
-                  <p>{firstName} {lastName}</p>
+                  <p> {city}, {state}</p>
                 </td>
               );
             })
@@ -55,4 +56,4 @@ class Contact extends Component {
     }
   }
 
-export default Contact;
+export default Location;

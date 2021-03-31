@@ -27,6 +27,10 @@ th.table-cell {
   color: #5F667E;
   background: #f7f9ff;
 }
+.table-row:nth-of-type(even) {
+  background: #f7f9ff;
+}
+
 td {
   padding: 10px 0;
   border-bottom: #edf0f7 1px solid;

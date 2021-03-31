@@ -2,25 +2,25 @@ import React, {Component} from 'react';
 import "./App.css"
 import API_KEY from "./credentials";
 
-class Contact extends Component {
+class Deal extends Component {
     state = {
       isLoading: true,
-      users: [],
+      deals: [],
       error: null
     };
-    fetchUsers() {
-        const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/contacts';
-    const options = {
-        method: 'GET',
-        headers: {
-            "Api-Token": `${API_KEY}`,
-            "Accept": "application/json"
-            }
-        };
+    fetchDeals() {
+        const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/deals?orders[title]=ASC&orders[value]=ASC&orders[cdate]=ASC&orders[contact_name]=ASC&orders[contact_orgname]=ASC&orders[next-action]=ASC';
+        const options = {
+            method: 'GET',
+            headers: {
+                "Api-Token": `${API_KEY}`,
+                "Accept": "application/json"
+                }
+            };
       return fetch(url, options)
         .then(response => response.json())
         .then(data => this.setState({
-            users: data.contacts,
+            deals: data.deals,
             isLoading: false,
           })
         )
@@ -28,20 +28,22 @@ class Contact extends Component {
     }
   
     componentDidMount() {
-      this.fetchUsers();
+      this.fetchDeals();
     }
     render() {
-      const { isLoading, users, error } = this.state;
-      console.log(users);
+      const { isLoading, deals, error } = this.state;
+      console.log(deals);
       return (
         <React.Fragment>
+        {/* <h1>Hello Deal</h1> */}
           {error ? <p>{error.message}</p> : null}
           {!isLoading ? (
-            users.map(user => {
-              const { firstName, lastName } = user;
+            deals.map(deal => {
+              const {stage} = deal;
               return (
                 <td className="table-cell name">
-                  <p>{firstName} {lastName}</p>
+                  <p>{stage}</p>
+                  <hr />
                 </td>
               );
             })
@@ -55,4 +57,4 @@ class Contact extends Component {
     }
   }
 
-export default Contact;
+export default Deal;
