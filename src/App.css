@@ -25,6 +25,12 @@ tr.table-row:nth-of-type(even) {
 .table-cell {
   display: table-cell;
 }
+span.table-cell {
+  display: flex;
+  flex-flow: column;
+  padding: 10px 0;
+  border-bottom: #edf0f7 1px solid;
+}
 td.table-cell {
   display: flex;
   flex-flow: column;
@@ -43,6 +49,9 @@ td {
 .name {
   color: #356ae6;
   font-weight: 600;
+}
+
+.column-one {
 }
 
 .App {

@@ -2,32 +2,32 @@
 // import API_KEY from "./credentials";
 
 
-// // const url='https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/contacts';
-// // const config = {
-// //     headers: {
-// //         "Api-Token": `${API_KEY}`,
-// //         "Content-Type": "application/json",
-// //         "Access-Control-Allow-Origin": "*",
-// //         "Access-Control-Allow-Headers": "Content-Type",
-// //         "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
+// const url='https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/contacts';
+// const config = {
+//     headers: {
+//         "Api-Token": `${API_KEY}`,
+//         "Content-Type": "application/json"
+//         // "Access-Control-Allow-Origin": "*",
+//         // "Access-Control-Allow-Headers": "Content-Type",
+//         // "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
 
-// //     }
+//     }
 
-// // }
-// // async function FetchPost() {
-// //     try {
-// //         const response = await axios.get(
-// //             url, config
-// //         );
-// //         console.log(response);
-// //     } catch(error) {
-// //         alert(error.message);
-// //         console.log(error.message);
-// //     }
+// }
+// async function FetchPost() {
+//     try {
+//         const response = await axios.get(
+//             url, config
+//         );
+//         console.log(response);
+//     } catch(error) {
+//         alert(error.message);
+//         console.log(error.message);
+//     }
 
-// // }
+// }
 
-// // FetchPost();
+// FetchPost();
 
 
 // export default FetchPost;
