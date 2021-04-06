@@ -1,2 +1,6 @@
 node_modules
 /cors-anywhere
+<<<<<<< HEAD
+=======
+# /src/credentials.js
+>>>>>>> 2d4eec7da1c2cca8a6ab78d1189c0b210cc181a4
