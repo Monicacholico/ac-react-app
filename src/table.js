@@ -23,13 +23,13 @@ class Table extends Component {
                         </tr>
                     </thead>
                 <tbody>
-                    {/* <tr className="table-row"> */}
-                        {/* <td className="table-cell name text_underline"><Contact/></td>
+                    {/* <tr className="table-row">
+                        <td className="table-cell name text_underline"><Contact/></td>
                         <td className=""><TotalValue/></td>
                         <td className=""><Deal/></td>
                         <td className=""><Tag/></td>
-                        <td className=""><Location/></td> */}
-                    {/* </tr> */}
+                        <td className=""><Location/></td>
+                    </tr> */}
                     <Tr/>
                 </tbody>
                 </table>
