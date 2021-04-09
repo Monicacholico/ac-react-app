@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+<<<<<<< HEAD
+import Execute from './api';
+
+=======
 import Tr from './Tr';
 import Contact from './Contact';
 import Deal from './Deal';
@@ -6,11 +10,18 @@ import Tag from './Tag';
 import Location from './Location';
 import TotalValue from './TotalValue';
 import './App.css';
+>>>>>>> 2d4eec7da1c2cca8a6ab78d1189c0b210cc181a4
 
 
 class Table extends Component {
     render() {
+        const listOfData = Execute();
         return (
+<<<<<<< HEAD
+            <section>
+                <h2 className="lavender">Here goes the Table!</h2>
+                {console.log(listOfData)}
+=======
             <section className="section">
                 <table className="legend">
                     <thead>
@@ -33,6 +44,7 @@ class Table extends Component {
                     <Tr/>
                 </tbody>
                 </table>
+>>>>>>> 2d4eec7da1c2cca8a6ab78d1189c0b210cc181a4
             </section>
         )
     }

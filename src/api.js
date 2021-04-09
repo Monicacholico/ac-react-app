@@ -1,7 +1,36 @@
-// import axios from "axios";
-// import API_KEY from "./credentials";
+import axios from "axios";
+import API_KEY from "./credentials";
 
 
+<<<<<<< HEAD
+const url='https://usaa1617144725.activehosted.com/api/3';
+const config = {
+    headers: {
+        "Api-Token": `${API_KEY}`,
+        "Accept": "application/json"
+        // "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Headers": "Content-Type",
+        // "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
+
+    }
+
+}
+async function FetchPost() {
+    try {
+        const response = await axios.get(
+            url, config
+        );
+        console.log(response);
+    } catch(error) {
+        alert(error.message);
+        console.log(error.message);
+    }
+
+}
+
+FetchPost();
+
+=======
 // const url='https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/contacts';
 // const config = {
 //     headers: {
@@ -28,20 +57,20 @@
 // }
 
 // FetchPost();
+>>>>>>> 2d4eec7da1c2cca8a6ab78d1189c0b210cc181a4
 
 
-// export default FetchPost;
 
 // function Execute() {
-//   const url = 'https://cors-anywhere.herokuapp.com/https://sahmed93846.activehosted.com/api/3/contacts';
+//   const url = 'https://sahmed93846.activehosted.com/api/3/contacts?status=-1&orders[email]=ASC';
 //   const options = {
-//       method: 'GET',
+//       method: "GET",
 //       headers: {
 //           "Api-Token": `${API_KEY}`,
-//           "Accept": "application/json"
-//           // "Access-Control-Allow-Origin": "*",
-//           // "Access-Control-Allow-Headers": "Content-Type",
-//           // "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
+//           "Content-Type": "application/json",
+//           "Access-Control-Allow-Origin": "*",
+//           "Access-Control-Allow-Headers": "Content-Type",
+//           "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
 //       }
 //   };
 //   return fetch(url, options).then(
@@ -49,21 +78,11 @@
 //           return response.json();
 //       })
 //       .then(data => {
-//           console.log(data);
-//           const listOfContacts = data.contacts;
-//           console.log(listOfContacts);
-//           for(let contact of listOfContacts){
-//             console.log( contact);
-//           }
+//           console.log(data.results);
 //       })
 
 // }
 
-// const listOfContacts = Execute();
-//         console.log(listOfContacts);
+// Execute();
 
-// export default Execute;
-
-
-
-
+export default FetchPost;
