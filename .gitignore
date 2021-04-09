@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /src/credentials.js
+/cors-anywhere
 
 # testing
 /coverage
