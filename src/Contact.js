@@ -36,11 +36,11 @@ class Contact extends Component {
       this.fetchUsers();
     }
 
-    sorter = () => {
-     this.fetchUsers();
-     const sortingUsers = users.sort((a,b) => a > b ? 1 : -1)
-     return sortingUsers;
-    }
+    // sorter = () => {
+    //  this.fetchUsers();
+    //  const sortingUsers = users.sort((a,b) => a > b ? 1 : -1)
+    //  return sortingUsers;
+    // }
 
     render() {
       const { isLoading, users, error } = this.state;
@@ -53,12 +53,10 @@ class Contact extends Component {
             users.map(user => {
               const { firstName, lastName } = user;
               return (
-                <div>
-                  {sortingUsers}
                 <td className="table-cell name">
                   <p>{firstName} {lastName}</p>
                 </td>
-                </div>
+
               );
             })
           ) : (
